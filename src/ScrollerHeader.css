@@ -1,34 +1,74 @@
-nav ul li {
-  width: 250px;
-  text-align: center;
-  height: 65px;
+.navbar-fixed-top {
+  top: 50px;
+  left: 12.5%;
+  right: 12.5%;
 }
-
-nav ul {
+.menu-wrapper {
+  width: 75%;
+  height: 50px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  line-height: 65px;
+  line-height: 50px;
   align-items: center;
+  background-color: #47a848;
 }
 
-ul.container-fluid::-webkit-scrollbar {
+.menu-item {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 5px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 35px;
+  text-align: center;
+  vertical-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  color: white;
+}
+
+.test {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 5px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 35px;
+  text-align: center;
+  vertical-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  color: white;
+}
+
+.menu-item::-webkit-scrollbar {
   width: 0 !important;
   display: none;
 }
 
-.container-fluid {
-  height: 65px;
-}
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
+.test {
+  padding: 0 10px;
+  margin: 5px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 35px;
+  text-align: center;
+  vertical-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-ul li {
-  display: inline-block;
+.test.active {
+  color: #47a848;
+  border-radius: 40px;
+  background-color: white !important;
+  border: 1px #47a848 solid;
 }
 
 .container-fluid {
@@ -41,3 +81,40 @@ ul li {
   padding-inline-start: 0px;
   margin-top: 0px;
 }
+
+@media screen and (max-width: 600px) {
+  .menu-wrapper {
+    width: 100%;
+  }
+  .navbar-fixed-top {
+    left: 0;
+    right: 0;
+  }
+}
+/* nav ul {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  line-height: 65px;
+  align-items: center;
+} */
+
+/* ul.container-fluid::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+.container-fluid {
+  height: 50px;
+  background-color: #47a848;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+} */
+
+/* ul li {
+  display: inline-block;
+} */

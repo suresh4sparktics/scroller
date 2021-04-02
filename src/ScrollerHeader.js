@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
@@ -6,8 +7,8 @@ import "./ScrollerHeader.css";
 
 export default function ScrollerHeader() {
   useEffect(() => {
-    const slider = document.querySelector(".container-fluid");
-    const lists = document.querySelectorAll(".container-fluid li a");
+    const slider = document.querySelector(".menu-wrapper");
+    const lists = document.querySelectorAll(".menu-item");
     console.log(lists);
     let isDown = false;
     let startX;
@@ -33,11 +34,14 @@ export default function ScrollerHeader() {
     });
     window.addEventListener("scroll", () => {
       var activeElement = document.querySelector(".active");
-      activeElement.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "center",
-      });
+      console.log(activeElement);
+      if (activeElement) {
+        activeElement.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "center",
+        });
+      }
     });
 
     lists.forEach((list) => {
@@ -52,150 +56,196 @@ export default function ScrollerHeader() {
   });
 
   return (
-    <nav className="navbar-fixed-top">
-      <ul className="container-fluid">
-        <li>
+    <>
+      <div className="navbar-fixed-top menu-wrapper">
+        <div className="menu-item">
           <Link
-            className="test1 test"
-            to="test1"
+            className="test"
+            to="mostloved"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 1
+            Most Loved
           </Link>
-        </li>
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test2 test"
-            to="test2"
+            className="test"
+            to="combo"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 2
+            Combo
           </Link>
-        </li>
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test3 test"
-            to="test3"
+            className="test"
+            to="alldaybreakfast"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 3
+            All Day Breakfast
           </Link>
-        </li>
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test4 test"
-            to="test4"
+            className="test"
+            to="lunch/dinner"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 4
+            Lunch/Dinner
           </Link>
-        </li>
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test5 test"
-            to="test5"
+            className="test"
+            to="fruitbowls"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 5
+            Fruit Bowls
           </Link>
-        </li>
-
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test6 test"
-            to="test6"
+            className="test"
+            to="juices"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 6
+            Juices
           </Link>
-        </li>
-
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test7 test"
-            to="test7"
+            className="test"
+            to="salads"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 7
+            Salads
           </Link>
-        </li>
-
-        <li>
+        </div>
+        <div className="menu-item">
           <Link
-            className="test8 test"
-            to="test8"
+            className="test"
+            to="sandwiches"
             spy={true}
             smooth={true}
             duration={500}
           >
-            Test 8
+            SandWiches
           </Link>
-        </li>
-
-        <li>
-          <Link
-            className="test9 test"
-            to="test9"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Test 9
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            className="test10 test"
-            to="test10"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Test 10
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            className="test11 test"
-            to="test11"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Test 11
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            className="test12 test"
-            to="test12"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Test 12
-          </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+      </div>
+    </>
   );
+}
+
+{
+  /* <nav className="navbar-fixed-top">
+        <ul className="container-fluid">
+          <li>
+            <Link
+              className="test"
+              to="mostloved"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Most Loved
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="test"
+              to="combo"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Combo
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="test"
+              to="alldaybreakfast"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              All Day Breakfast
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="test"
+              to="lunch/dinner"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Lunch/Dinner
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="test"
+              to="fruitbowls"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Fruit Bowls
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="test"
+              to="juices"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Juices
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className="test"
+              to="salads"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              Salads
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className="test"
+              to="sandwiches"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              SandWiches
+            </Link>
+          </li>
+        </ul>
+      </nav> */
 }
 
 // onscroll = function () {
